@@ -99,6 +99,23 @@ Every one of these must be present on every page before it ships. No exceptions.
 
 Aesthetic: "Coastal Celebration" — sophisticated, editorial, image-heavy. No hot pink, no clipart. Premium Maine experience.
 
+## Site structure
+
+### Live pages (4)
+- `/` — Homepage
+- `/boat-cruise/` — Money page, FareHarbor booking funnel
+- `/portland-maine-guide/` — Weekend itinerary guide
+- `/maine-bachelorette-activities/` — Activities hub
+
+### Deferred pages
+- `/blog/` — "Bach Blog" index is built but hidden: `noindex,nofollow`, excluded from nav and sitemap. Re-enable when blog post content is ready. See `docs/launch-roadmap.md` for re-enable steps.
+
+### Nav link labels (current)
+Boat Cruise / Portland Guide / Reviews / Book Now
+*(Bach Blog removed until blog is ready to launch)*
+
+---
+
 ## Content strategy
 
 The site is both a booking funnel and a topical authority hub. Blog/guide content targets long-tail keywords ("best bachelorette activities Portland Maine", "Maine bachelorette weekend itinerary") and links internally to money pages. Money pages drive FareHarbor bookings.

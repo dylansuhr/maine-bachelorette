@@ -80,6 +80,39 @@
   box-shadow: 0 8px 40px rgba(0,0,0,0.15);
 }
 
+/* ── Culinary Section ────────────────────────────────────────── */
+.culinary-section { background: var(--navy); }
+
+.culinary-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.culinary-content .eyebrow { color: var(--gold); }
+.culinary-content h2 { color: var(--white); margin-bottom: 20px; }
+.culinary-content p { color: rgba(255,255,255,0.7); margin-bottom: 14px; font-size: 0.9rem; }
+.culinary-content strong { color: var(--white); }
+
+.culinary-menu { margin-top: 28px; }
+
+.culinary-list li {
+  color: rgba(255,255,255,0.7) !important;
+  font-size: 0.85rem;
+}
+
+.culinary-img-wrap { overflow: hidden; }
+.culinary-img-wrap img { width: 100%; object-fit: cover; }
+
+/* ── Package Price ───────────────────────────────────────────── */
+.package-price {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  color: var(--navy);
+  margin-bottom: 20px !important;
+}
+
 /* ── Packages ────────────────────────────────────────────────── */
 .packages-section { background: var(--bg); }
 
@@ -142,15 +175,26 @@
   flex-shrink: 0;
 }
 
-/* ── Booking Placeholder ─────────────────────────────────────── */
+/* ── Booking Section ─────────────────────────────────────────── */
 .booking-section { background: var(--white); }
 
-.booking-placeholder {
-  background: var(--blush);
-  padding: 80px 48px;
-  text-align: center;
-  max-width: 640px;
-  margin: 0 auto;
+.booking-section .container {
+  max-width: 960px;
+}
+
+/* FareHarbor widget wrapper */
+.fareharbor-wrap {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Target whatever FareHarbor injects */
+.fareharbor-wrap [class*="fh-"],
+.fareharbor-wrap iframe,
+.fareharbor-wrap > div {
+  max-width: 100% !important;
+  width: 100% !important;
+  box-sizing: border-box;
 }
 
 /* ── FAQ ─────────────────────────────────────────────────────── */
@@ -200,6 +244,10 @@ details[open] .faq-q::after {
 
 /* ── Responsive ──────────────────────────────────────────────── */
 @media (max-width: 1024px) {
+  .culinary-inner { grid-template-columns: 1fr; gap: 40px; }
+  .culinary-img-wrap { order: -1; }
+  .culinary-img-wrap img { max-height: 360px; width: 100%; }
+
   .about-grid { grid-template-columns: 1fr; gap: 48px; }
   .about-imgs { padding-bottom: 32px; }
 
@@ -219,7 +267,7 @@ details[open] .faq-q::after {
 
 @media (max-width: 480px) {
   .package-body { padding: 24px 20px; }
-  .booking-placeholder { padding: 48px 24px; }
+
   .faq-q { font-size: 1.05rem; }
   .trust-num { font-size: 1.6rem; }
 }

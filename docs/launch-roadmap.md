@@ -6,18 +6,26 @@
 
 ## 1. Content & Code
 
-- [ ] Replace all placeholder images (picsum.photos) with real WebP photos
-  - `images/hero-home.webp`
+- [ ] Replace all placeholder images with real WebP photos
+  - `images/hero-home.webp` ← started (1 converted)
   - `images/hero-boat-cruise.webp`
   - `images/portland-maine-guide-hero.webp`
   - `images/maine-activities-hero.webp`
-  - Gallery images (5 per page)
-  - Blog card images
-  - `images/og-home.webp`, `og-boat-cruise.webp`, `og-portland-guide.webp`, `og-activities.webp`, `og-blog.webp` (1200×630 each for social sharing)
-- [ ] Add FareHarbor booking widget to `boat-cruise/index.html` in the `#book` section
-- [ ] Replace booking widget placeholder phone/email with live FareHarbor embed script
+  - `images/featured-boat-cruise.webp`
+  - `images/boat-marie-l.webp`
+  - `images/casco-islands.webp`
+  - `images/culinary-partnership.webp`
+  - Package images: `package-mimosa-brunch.webp`, `package-sunset-charter.webp`, `package-sightseeing.webp`, `package-fall-foliage.webp`
+  - Homepage gallery: `gallery-1.webp` – `gallery-5.webp`
+  - Cruise gallery: `cruise-gallery-1.webp` – `cruise-gallery-5.webp`
+  - Why Maine: `why-maine-coast.webp`, `why-maine-food.webp`, `why-maine-boat-group.webp`
+  - Guide cards: `guide-portland-weekend.webp`, `guide-boat-cruise.webp`, `guide-activities.webp`
+  - Activities: `activity-boat-cruise.webp`
+  - OG images (1200×630): `og-home.webp`, `og-boat-cruise.webp`, `og-portland-guide.webp`, `og-activities.webp`
+  - CTA background: `cta-bg.webp`
+- [ ] Add FareHarbor booking widget to `boat-cruise/index.html` → `#book` section
 - [ ] Create `apple-touch-icon.png` (180×180px, navy background, gold "mb")
-- [ ] Review all copy — especially testimonials (replace placeholders with real reviews)
+- [ ] Replace placeholder testimonials with real reviews
 - [ ] Add real Instagram, TripAdvisor, Facebook URLs to all footer social links
 
 ---
@@ -59,7 +67,7 @@ Allow 10–30 minutes for propagation. Check status at whatsmydns.net.
   - GSC → URL Inspection → `https://mainebachelorette.com/` → Request Indexing
   - GSC → URL Inspection → `https://mainebachelorette.com/boat-cruise/` → Request Indexing
 - [ ] Check Coverage report for any crawl errors after first 48 hours
-- [ ] Verify sitemap shows all 5 pages processed with no errors
+- [ ] Verify sitemap shows all 4 live pages processed with no errors
 
 ---
 
@@ -75,16 +83,26 @@ Allow 10–30 minutes for propagation. Check status at whatsmydns.net.
 
 ---
 
-## 6. Content Pipeline (post-launch)
+## 6. Bach Blog (deferred — do not launch with site)
 
-Blog posts to write for topical authority — in priority order:
+`/blog/` is built but hidden: `noindex,nofollow`, removed from nav and sitemap.
 
-1. "The Ultimate Portland Maine Bachelorette Weekend Itinerary" → `/portland-maine-guide/` ✓
-2. "What to Expect on a Maine Bachelorette Boat Cruise" → `/boat-cruise/` ✓
-3. "Maine vs Nashville: The Bachelorette Showdown" → `/blog/maine-vs-nashville/`
-4. "The Best Bachelorette Trip from Boston: Portland Maine" → `/blog/boston-bachelorette-trip/`
-5. "What to Pack for a Maine Bachelorette Weekend" → `/blog/packing-list/`
-6. "Maine Bachelorette Party on a Budget" → `/blog/maine-bachelorette-budget/`
-7. "Best Time of Year for a Maine Bachelorette Party" → `/blog/best-time-to-visit/`
+**To re-enable when ready:**
+1. Remove `<meta name="robots" content="noindex, nofollow">` from `blog/index.html`
+2. Re-add nav link `<li><a href="/blog/">Bach Blog</a></li>` to all pages
+3. Re-add footer link `<li><a href="/blog/">Bach Blog</a></li>` to all pages
+4. Add blog entry back to `sitemap.xml`
 
-Each post should: target a long-tail keyword in H1, include 600+ words, link back to `/boat-cruise/`.
+**Blog images still needed (before re-enabling):**
+- `blog-portland-weekend.webp`, `blog-boat-cruise-guide.webp`, `blog-activities.webp`
+- `blog-packing.webp`, `blog-vs-nashville.webp`, `blog-culinary-partnership.webp`, `blog-boston-bachelorette.webp`
+- `og-blog.webp` (1200×630)
+
+**Blog posts to write — in priority order:**
+1. "Maine vs Nashville: The Bachelorette Showdown" → `/blog/maine-vs-nashville/`
+2. "The Best Bachelorette Trip from Boston: Portland Maine" → `/blog/boston-bachelorette-trip/`
+3. "What to Pack for a Maine Bachelorette Weekend" → `/blog/packing-list/`
+4. "Maine Bachelorette Party on a Budget" → `/blog/maine-bachelorette-budget/`
+5. "Best Time of Year for a Maine Bachelorette Party" → `/blog/best-time-to-visit/`
+
+Each post: target a long-tail keyword in H1, 600+ words, link back to `/boat-cruise/`.

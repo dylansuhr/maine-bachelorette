@@ -25,12 +25,7 @@
     <priority>0.8</priority>
   </url>
 
-  <url>
-    <loc>https://mainebachelorette.com/blog/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- Add new blog posts below as they are published -->
+  <!-- Blog excluded until ready to launch -->
+  <!-- Add blog and posts here when ready to publish -->
 
 </urlset>
