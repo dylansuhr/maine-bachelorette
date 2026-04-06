@@ -1,0 +1,143 @@
+/* ── Portland Maine Guide Page Styles ───────────────────────── */
+
+.breadcrumb-bar {
+  background: var(--white);
+  border-bottom: 1px solid var(--blush-dark);
+  padding: 14px 0;
+}
+
+.breadcrumb {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.breadcrumb li + li::before {
+  content: '›';
+  margin-right: 8px;
+  color: var(--gold);
+}
+
+.breadcrumb a {
+  color: var(--text-muted);
+  transition: color var(--transition);
+}
+
+.breadcrumb a:hover { color: var(--navy); }
+
+/* ── Guide Intro ─────────────────────────────────────────────── */
+.guide-intro-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.guide-intro-inner p { margin-bottom: 16px; }
+
+.guide-intro-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  margin-top: 8px;
+}
+
+.stat-card {
+  background: var(--navy);
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.stat-num {
+  font-family: var(--font-heading);
+  font-size: 2.4rem;
+  color: var(--gold);
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.6);
+}
+
+/* ── Guide Cards Grid ────────────────────────────────────────── */
+.guide-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2px;
+}
+
+.guide-info-card {
+  background: var(--bg);
+  padding: 40px 36px;
+}
+
+.guide-info-card.featured-card {
+  background: var(--blush);
+}
+
+.guide-info-card .eyebrow { margin-bottom: 10px; }
+.guide-info-card h3 { margin-bottom: 14px; font-size: 1.4rem; }
+.guide-info-card p { font-size: 0.88rem; }
+
+/* ── Itinerary ───────────────────────────────────────────────── */
+.itinerary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.itinerary-day-label {
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+
+.itinerary-list {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.itinerary-list li {
+  font-size: 0.87rem;
+  color: rgba(255,255,255,0.65);
+  padding-left: 16px;
+  position: relative;
+  line-height: 1.6;
+}
+
+.itinerary-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 6px;
+  height: 1px;
+  background: var(--gold);
+}
+
+/* ── Responsive ──────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .guide-intro-inner { grid-template-columns: 1fr; gap: 48px; }
+  .itinerary-grid { grid-template-columns: 1fr; gap: 32px; }
+  .itinerary-day { padding-bottom: 32px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+  .itinerary-day:last-child { border-bottom: none; }
+}
+
+@media (max-width: 768px) {
+  .guide-cards-grid { grid-template-columns: 1fr; }
+  .guide-intro-stats { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 480px) {
+  .guide-info-card { padding: 28px 20px; }
+  .stat-card { padding: 24px 20px; }
+}

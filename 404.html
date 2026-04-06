@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Page Not Found | Maine Bachelorette</title>
+  <meta name="description" content="Page not found. Explore Maine bachelorette party ideas, private boat cruises on Casco Bay, and Portland Maine guides.">
+  <meta name="robots" content="noindex, follow">
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta name="theme-color" content="#2C3E6B">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+
+  <style>
+    .error-page {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 48px 24px;
+      background: var(--navy);
+      position: relative;
+      overflow: hidden;
+    }
+    .error-page::before {
+      content: '404';
+      position: absolute;
+      font-family: var(--font-heading);
+      font-size: clamp(180px, 30vw, 320px);
+      color: rgba(255,255,255,0.04);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      white-space: nowrap;
+      pointer-events: none;
+      line-height: 1;
+    }
+    .error-content { position: relative; z-index: 1; max-width: 560px; }
+    .error-content .eyebrow { color: var(--gold); margin-bottom: 20px; }
+    .error-content h1 {
+      color: var(--white);
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      font-style: italic;
+      font-weight: 300;
+      margin-bottom: 20px;
+    }
+    .error-content p { color: rgba(255,255,255,0.65); margin-bottom: 40px; }
+    .error-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+    }
+    @media (max-width: 480px) {
+      .error-links { flex-direction: column; align-items: center; }
+      .error-links .btn { width: 100%; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+  <main class="error-page" aria-labelledby="error-heading">
+    <div class="error-content">
+      <p class="eyebrow">404 &mdash; Page Not Found</p>
+      <h1>Lost at Sea?</h1>
+      <p>That page doesn't exist — but a private bachelorette boat cruise on Casco Bay definitely does. Let's get you back on course.</p>
+      <div class="error-links">
+        <a href="/" class="btn btn-primary">Back to Home</a>
+        <a href="/boat-cruise/" class="btn btn-outline">See the Boat Cruise</a>
+        <a href="/blog/" class="btn btn-outline">Ideas &amp; Guides</a>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
