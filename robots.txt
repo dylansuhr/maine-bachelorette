@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /blog/
 
 Sitemap: https://mainebachelorette.com/sitemap.xml

@@ -72,3 +72,9 @@
   .activity-card { padding: 32px 24px; }
   .activity-card--featured .activity-card-body { padding: 36px 24px; }
 }
+
+@media (max-width: 480px) {
+  .activity-card--featured .activity-card-img-wrap { height: 240px; }
+  .activity-card p,
+  .activity-card--featured p { font-size: 1rem; }
+}

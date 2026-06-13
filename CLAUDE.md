@@ -111,7 +111,7 @@ Aesthetic: "Coastal Celebration" — sophisticated, editorial, image-heavy. No h
 - `/blog/` — "Bach Blog" index is built but hidden: `noindex,nofollow`, excluded from nav and sitemap. Re-enable when blog post content is ready. See `docs/launch-roadmap.md` for re-enable steps.
 
 ### Nav link labels (current)
-Boat Cruise / Portland Guide / Reviews / Book Now
+Boat Cruise / Portland Guide / Activities / Book Now
 *(Bach Blog removed until blog is ready to launch)*
 
 ---

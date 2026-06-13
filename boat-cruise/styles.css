@@ -267,6 +267,7 @@ details[open] .faq-q::after {
 
 @media (max-width: 480px) {
   .package-body { padding: 24px 20px; }
+  .packages-grid .btn { width: 100%; text-align: center; }
 
   .faq-q { font-size: 1.05rem; }
   .trust-num { font-size: 1.6rem; }
