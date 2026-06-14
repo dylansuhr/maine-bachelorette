@@ -226,7 +226,7 @@ p {
   display: block;
   width: 24px;
   height: 2px;
-  background: var(--white);
+  background: var(--gold);
   transition: background var(--transition);
 }
 .nav.scrolled .nav-hamburger span { background: var(--navy); }
