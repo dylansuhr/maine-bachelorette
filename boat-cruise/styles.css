@@ -126,6 +126,27 @@
   background: var(--white);
   display: flex;
   flex-direction: column;
+  position: relative;
+}
+
+.package-card--popular {
+  border: 2px solid var(--gold);
+  box-shadow: 0 12px 48px rgba(197, 165, 114, 0.22);
+}
+
+.package-badge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: var(--gold);
+  color: var(--white);
+  font-family: var(--font-body);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 7px 16px;
+  z-index: 2;
 }
 
 .package-img-wrap {
