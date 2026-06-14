@@ -76,7 +76,7 @@
 </head>
 <body>
 
-  <nav class="nav" id="nav" aria-label="Main navigation">
+  <nav class="nav scrolled" id="nav" aria-label="Main navigation">
     <div class="container">
       <a href="/" class="nav-logo">Maine Bachelorette</a>
       <ul class="nav-links" role="list">
@@ -213,7 +213,7 @@
   <script>
     const nav = document.getElementById('nav');
     window.addEventListener('scroll', () => {
-      nav.classList.toggle('scrolled', window.scrollY > 60);
+      nav.classList.add('scrolled');
     }, { passive: true });
 
     const menuToggle = document.getElementById('menuToggle');
