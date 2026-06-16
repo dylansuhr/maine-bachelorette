@@ -850,25 +850,31 @@ p {
 
   .btn { padding: 16px 24px; min-height: 48px; }
 
-  /* Footer: brand full-width top row, nav cols side by side in row 2 */
+  /* Footer: name → description → gold line → 2-col links */
   .footer-inner {
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto auto;
+    grid-template-rows: auto auto auto auto;
     gap: 20px 32px;
   }
   .footer-brand-name {
     grid-column: 1 / -1;
     grid-row: 1;
   }
-  .footer-col-heading:nth-of-type(1) { grid-column: 1; grid-row: 2; }
-  .footer-col-heading:nth-of-type(2) { grid-column: 2; grid-row: 2; }
   .footer-brand-body {
     grid-column: 1 / -1;
-    grid-row: 4;
+    grid-row: 2;
   }
-  .footer-col-links:nth-of-type(1) { grid-column: 1; grid-row: 3; }
-  .footer-col-links:nth-of-type(2) { grid-column: 2; grid-row: 3; }
+  .footer-col-heading:nth-of-type(1) { grid-column: 1; grid-row: 3; }
+  .footer-col-heading:nth-of-type(2) { grid-column: 2; grid-row: 3; }
+  .footer-col-links:nth-of-type(1) { grid-column: 1; grid-row: 4; }
+  .footer-col-links:nth-of-type(2) { grid-column: 2; grid-row: 4; }
   .footer-brand-body p { max-width: 100%; }
+  /* Gold separator above the link columns */
+  .footer-col-heading {
+    padding-top: 20px;
+    border-top: 1px solid rgba(197, 165, 114, 0.3);
+    margin-top: 4px;
+  }
 
   /* Minimum 16px readable body copy on mobile */
   p { font-size: 1rem; }
