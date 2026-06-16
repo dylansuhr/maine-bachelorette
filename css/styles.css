@@ -241,6 +241,8 @@ p {
 }
 .nav.scrolled .nav-hamburger span { background: var(--navy); }
 
+.nav-mobile-cta { display: none; }
+
 /* ── Hero ────────────────────────────────────────────────────── */
 .hero {
   position: relative;
@@ -811,8 +813,32 @@ p {
 @media (max-width: 768px) {
   :root { --section-v: 72px; }
 
+  .nav { flex-direction: column; height: auto; }
+  .nav .container { height: var(--nav-height); }
+
   .nav-links { display: none; }
   .nav-hamburger { display: flex; }
+
+  .nav-mobile-cta {
+    width: 100%;
+    padding: 0 16px 14px;
+  }
+  .nav.scrolled .nav-mobile-cta { display: block; }
+  .nav-mobile-cta-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 48px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    background: var(--gold);
+    color: var(--white) !important;
+    border-radius: var(--radius);
+  }
+  .nav-mobile-cta-btn:hover { background: var(--gold-light) !important; }
 
   .why-grid,
   .guides-grid { grid-template-columns: 1fr; }
