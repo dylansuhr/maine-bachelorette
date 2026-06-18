@@ -7,19 +7,40 @@
 #   2. Run: bash scripts/convert-images.sh
 #   3. Optimized WebP files appear in images/
 #
-# Requires: brew install imagemagick
+# Requires: brew install imagemagick webp
 
 RAW_DIR="raw"
 OUT_DIR="images"
 QUALITY=82
+QUALITY_LOW=72
 
 mkdir -p "$OUT_DIR"
 
 converted=0
 skipped=0
 
-# Format: "filename width height"
+# Images that can tolerate more aggressive compression (small supporting
+# photos in grid cards, never shown full-bleed) — use QUALITY_LOW for these.
+LOW_QUALITY_NAMES=(
+  "hero-home-sm"
+  "why-maine-coast"
+  "why-maine-food"
+  "why-maine-boat-group"
+)
+
+is_low_quality() {
+  local name="$1"
+  for n in "${LOW_QUALITY_NAMES[@]}"; do
+    [ "$n" = "$name" ] && return 0
+  done
+  return 1
+}
+
+# Format: "filename width height [sourcename]"
+# sourcename defaults to filename — set it when a variant (e.g. an "-sm"
+# mobile size) is generated from a differently-named raw source.
 IMAGES=(
+  "hero-home-sm               768  432  hero-home"
   "hero-home                  1920 1080"
   "hero-boat-cruise           1920 1080"
   "portland-maine-guide-hero  1920 1080"
@@ -34,6 +55,7 @@ IMAGES=(
   "why-maine-boat-group       600  450"
   "featured-boat-cruise       900  700"
   "gallery-1                  1200 900"
+  "private-boat-charter-toast-casco-bay-maine  1200 900  cheers_boat_fun_group"
   "gallery-2                  600  450"
   "gallery-3                  600  450"
   "gallery-4                  600  450"
@@ -51,6 +73,7 @@ IMAGES=(
   "cruise-gallery-3           600  450"
   "cruise-gallery-4           600  450"
   "cruise-gallery-5           600  450"
+  "bachelorette-cake-toast-boat-cruise-maine  600  450  rainbow-cake-toast"
   "activity-boat-cruise       800  500"
   "blog-portland-weekend      900  560"
   "blog-boat-cruise-guide     600  400"
@@ -71,12 +94,13 @@ echo "Converting images from raw/ → images/ ..."
 echo ""
 
 for entry in "${IMAGES[@]}"; do
-  read -r name width height <<< "$entry"
+  read -r name width height sourcename <<< "$entry"
+  sourcename="${sourcename:-$name}"
 
   # Find source file (jpg, jpeg, png, heic — any case)
   src=""
   for ext in jpg jpeg JPG JPEG png PNG heic HEIC; do
-    candidate="${RAW_DIR}/${name}.${ext}"
+    candidate="${RAW_DIR}/${sourcename}.${ext}"
     if [ -f "$candidate" ]; then
       src="$candidate"
       break
@@ -91,12 +115,24 @@ for entry in "${IMAGES[@]}"; do
 
   out="${OUT_DIR}/${name}.webp"
 
+  quality="$QUALITY"
+  if is_low_quality "$name"; then
+    quality="$QUALITY_LOW"
+  fi
+
+  # Resize/crop losslessly with ImageMagick, then hand off to cwebp for the
+  # final encode — cwebp's compressor (method 6) produces meaningfully
+  # smaller files than ImageMagick's built-in WebP writer at the same
+  # quality setting.
+  tmp_png=$(mktemp /tmp/convert-images.XXXXXX).png
   magick "$src" \
     -resize "${width}x${height}^" \
     -gravity center \
     -extent "${width}x${height}" \
-    -quality "$QUALITY" \
-    "$out"
+    "$tmp_png"
+
+  cwebp -quiet -q "$quality" -m 6 "$tmp_png" -o "$out"
+  rm -f "$tmp_png"
 
   size_kb=$(du -k "$out" | cut -f1)
   echo "  ✓ ${name}.webp  (${size_kb}KB)"

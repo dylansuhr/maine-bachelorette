@@ -3,6 +3,20 @@
    Design: Coastal Celebration
    ============================================================= */
 
+/* ── Font fallback metric overrides (reduces CLS from webfont swap) ── */
+@font-face {
+  font-family: 'Cormorant Garamond Fallback';
+  src: local('Georgia');
+  size-adjust: 104%;
+  ascent-override: 95%;
+}
+@font-face {
+  font-family: 'Montserrat Fallback';
+  src: local('Arial');
+  size-adjust: 100%;
+  ascent-override: 92%;
+}
+
 /* ── Variables ─────────────────────────────────────────────── */
 :root {
   --navy:       #2C3E6B;
@@ -16,8 +30,8 @@
   --text-muted: #666666;
   --white:      #FFFFFF;
 
-  --font-heading: 'Cormorant Garamond', serif;
-  --font-body:    'Montserrat', sans-serif;
+  --font-heading: 'Cormorant Garamond', 'Cormorant Garamond Fallback', serif;
+  --font-body:    'Montserrat', 'Montserrat Fallback', sans-serif;
 
   --max-width: 1200px;
   --nav-height: 72px;
@@ -568,8 +582,7 @@ p {
   font-size: 0.7rem;
   font-weight: 400;
   letter-spacing: 0.05em;
-  color: var(--text-muted);
-  opacity: 0.7;
+  color: #595959;
   margin-top: 4px;
 }
 
@@ -652,7 +665,7 @@ p {
 
 .footer-col-links li a {
   font-size: 0.82rem;
-  color: rgba(255,255,255,0.55);
+  color: rgba(255,255,255,0.65);
   transition: color var(--transition);
 }
 
@@ -692,12 +705,12 @@ p {
 
 .footer-nap p {
   font-size: 0.8rem;
-  color: rgba(255,255,255,0.45);
+  color: rgba(255,255,255,0.6);
   line-height: 1.9;
 }
 
 .footer-nap a {
-  color: rgba(255,255,255,0.45);
+  color: rgba(255,255,255,0.6);
   transition: color var(--transition);
 }
 

@@ -11,7 +11,7 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
   </script>
-  <script src="/js/ga-internal.js"></script>
+  <script defer src="/js/ga-internal.js"></script>
 
   <!-- Primary SEO -->
   <title>Maine Bachelorette Party Ideas | Portland, Maine</title>
@@ -149,7 +149,9 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet"></noscript>
 
   <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -469,8 +471,8 @@
     <div class="container">
       <div class="footer-inner">
         <p class="footer-brand-name">Maine Bachelorette</p>
-        <h4 class="footer-col-heading">Experiences</h4>
-        <h4 class="footer-col-heading">Guides</h4>
+        <h2 class="footer-col-heading">Experiences</h2>
+        <h2 class="footer-col-heading">Guides</h2>
         <div class="footer-brand-body">
           <p>Maine's best-kept bachelorette secret. Private boat charters and coastal experiences on Casco Bay.</p>
           <address class="footer-nap">
