@@ -1,0 +1,13 @@
+# macOS
+.DS_Store
+
+# Editor
+.vscode/*
+!.vscode/settings.json
+.idea/
+
+# Env / secrets — never commit these
+.env
+.env.*
+*.pem
+*.key
