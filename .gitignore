@@ -11,3 +11,7 @@
 .env.*
 *.pem
 *.key
+
+# Raw source photos — large, unoptimized; converted WebP output in images/ is what ships
+raw/*
+!raw/.gitkeep
